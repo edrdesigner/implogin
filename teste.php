@@ -3,7 +3,9 @@
 #######
 # localhost pop3 with and without ssl
 # $authhost="{localhost:995/pop3/ssl/novalidate-cert}";
-# $authhost="{localhost:110/pop3/notls}";
+# $authhost="{wg2.webgenium.com.br:110/pop3/notls}";
+#	$user="eduardo@webger.eti.br";
+#	$pass="eduardo123";
 
 # localhost imap with and without ssl
 # $authhost="{localhost:993/imap/ssl/novalidate-cert}";
@@ -22,18 +24,18 @@
 
 #########
 # goggle with pop3 or imap
- $authhost="{pop.gmail.com:995/pop3/ssl/novalidate-cert}";
- #$authhost="{imap.gmail.com:993/imap/ssl/novalidate-cert}";
+ #$authhost="{pop.gmail.com:995/pop3/ssl/novalidate-cert}";
+$authhost="{imap.gmail.com:993/imap/ssl/novalidate-cert}";
 # $user="username@gmail.com";
 
 $user="eduardo@webgenium.com.br";
 $pass="siste1853";
 
-if ($mbox=imap_open( $authhost, $user, $pass ))
-        {
-         echo "<h1>Connected</h1>\n";
-         imap_close($mbox);
-        } else
-        {
-         echo "<h1>FAIL!</h1>\n";
-        }
+if ($mbox=imap_open( $authhost, $user, $pass, OP_HALFOPEN ))
+{
+ echo "<h1>Connected</h1>\n";
+ imap_close($mbox);
+} else
+{
+ echo "<h1>FAIL!</h1>\n";
+}
