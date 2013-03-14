@@ -1,10 +1,10 @@
 <?php
 include "IMAP_Login.php";
 
-$if="if09062";
-$password="mypassword";
+$if="eduardo@weber.eti.br";
+$password="eduardo123";
 
-$imap = new IMAP_Login("students.del.ac.id");
+$imap = new IMAP_Login("wg2.webgenium.com.br");
 
 if ($imap->is_login($if, $passwd)){
 	echo "Successfully login";

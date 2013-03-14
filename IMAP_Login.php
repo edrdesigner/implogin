@@ -19,7 +19,8 @@ class IMAP_Login{
 	function IMAP_Login($server, $port=143){
 		$this->server[0] = array($server, $port);
 		$this->protokol = "imap";
-		$this->sertifikat = "novalidate-cert";
+		//$this->sertifikat = "novalidate-cert";
+		$this->sertifikat = "";
 	}
 	
 	/**
